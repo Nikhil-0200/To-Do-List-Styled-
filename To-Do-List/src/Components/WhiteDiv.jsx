@@ -1,11 +1,12 @@
 import { useState } from "react";
 import ListData from "./ListData";
 
+
 function WhiteDiv(){
-     const [task, setTask] = useState([])
+    const [task, setTask] = useState([])
     const [data, setData] = useState({
         title: "",
-        completed: "flase"
+        completed: false
     })
 
     function handleChange(event){
@@ -44,6 +45,13 @@ function WhiteDiv(){
     }
 
 
+    function UpdBtn(index){
+        setTask((prevTask)=>{
+            const TaskStatus = [...prevTask]
+            TaskStatus[index].completed = !TaskStatus[index].completed
+            return TaskStatus
+        })
+    }
 
     return(
       <div id='whiteDiv'>
@@ -56,8 +64,9 @@ function WhiteDiv(){
         {task.map((ele, index)=>(
             <ListData
             key={index} 
-            task={ele.title}
-            DltBtn={()=>DltBtn(index)} 
+            task={ele}
+            DltBtn={()=>DltBtn(index)}
+            UpdBtn={()=>UpdBtn(index)} 
             />
         ))}
         </div>

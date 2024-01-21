@@ -5,7 +5,6 @@
 #ToDoBanner{
     width: 70%;
     height: 300px;
-    /* border: 2px solid black; */
     background-color: #DB412A;
     font-size: 3rem;
     color: #ffff;
@@ -14,9 +13,37 @@
     box-shadow: rgba(0, 0, 0, 0.13) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
+@media screen and (max-width: 990px) {
+    #ToDoBanner{
+        width: 90%;
+        height: 300px;
+        background-color: #DB412A;
+        font-size: 3rem;
+        color: #ffff;
+        padding: 2rem 1.7rem;
+        font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+        box-shadow: rgba(0, 0, 0, 0.13) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    }   
+}
+
+
 #ToDoBanner > h1{
     width: 30%;
 }
+
+@media screen and (max-width: 1135px) {
+    #ToDoBanner > h1{
+        width: 40%;
+    }
+}
+
+
+@media screen and (max-width: 715px) {
+    #ToDoBanner > h1{
+        width: 100%;
+    }
+}
+
 #ToDoBanner > p{
     font-size: 2rem;
     color: #ffff;
@@ -25,10 +52,47 @@
 
 #whiteDiv{
     width: 45%;
-    height: 90%;
+    min-height: 90%;
+    top: 5%;
     right: 15%; 
     background-color: aliceblue;
     position: absolute;
+}
+
+@media screen and (max-width: 715px) {
+    #whiteDiv{
+        width: 90%;
+        min-height: 90%;
+        top: 75%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aliceblue;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #whiteDiv{
+        width: 90%;
+        min-height: 90%;
+        top: 85%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aliceblue;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #whiteDiv{
+        width: 90%;
+        min-height: 90%;
+        top: 95%; 
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aliceblue;
+        position: absolute;
+    }
 }
 
 #box{
@@ -39,10 +103,12 @@
 #Form > input{
     width: 80%;
     height: 50px;
+    font-size: 2rem;
 }
 
 #Form{
     display: flex;
+    gap: 20px;
     justify-content: space-evenly;
 }
 #Form > button{
@@ -62,17 +128,18 @@
 }
 
 #ListDataDiv > p{
-    flex-wrap: wrap;
+    overflow-wrap:anywhere;
+    width: 80%;
+    text-align: left;
 }
 #ListDataDiv{   
     width: 100%;
-    background-color: aqua;
     display: flex;
     justify-content: space-between;
     font-size: 1.3rem;
     flex-wrap: wrap;
     box-sizing: border-box;
-    padding: 1rem;
+    padding: 1rem 2rem;
 }
 
 #ListDataDiv > span{
@@ -98,4 +165,20 @@
 
 #ListDataDiv > span > button > i{
     font-size: 1.2rem;
+}
+
+#Total{
+    position: absolute;
+    background-color: #DB412A;
+    top: 5%;
+    left: 15%;
+    height: 100px;
+    display: flex;
+}
+
+#Total > span{
+    background-color: rgb(216, 144, 144);
+    text-align: center;
+    padding: 0.5rem .5rem;
+    border: 2px solid black;
 }
