@@ -4,7 +4,8 @@ import ListData from "./ListData";
 function WhiteDiv(){
      const [task, setTask] = useState([])
     const [data, setData] = useState({
-        title: ""
+        title: "",
+        completed: "flase"
     })
 
     function handleChange(event){
@@ -34,6 +35,14 @@ function WhiteDiv(){
         })
     }
 
+    function DltBtn(index){
+        const CopyData = [
+            ...task 
+        ]
+        const FilterData = CopyData.filter((ele, i)=> i != index)
+        setTask(FilterData)
+    }
+
 
 
     return(
@@ -45,7 +54,11 @@ function WhiteDiv(){
         </form>
         <div id="box2">
         {task.map((ele, index)=>(
-            <ListData key={index} task={ele.title} />
+            <ListData
+            key={index} 
+            task={ele.title}
+            DltBtn={()=>DltBtn(index)} 
+            />
         ))}
         </div>
         </div>
