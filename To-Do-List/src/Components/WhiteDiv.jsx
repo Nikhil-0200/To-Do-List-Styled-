@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ListData from "./ListData";
-
+import Total from "./Total";
 
 function WhiteDiv(){
     const [task, setTask] = useState([])
@@ -32,13 +32,14 @@ function WhiteDiv(){
         setTask(newTask)
 
         setData({
-            title: ""
+            title: "",
+            completed: false
         })
     }
 
     function DltBtn(index){
         const CopyData = [
-            ...task 
+            ...task,
         ]
         const FilterData = CopyData.filter((ele, i)=> i != index)
         setTask(FilterData)
@@ -52,6 +53,26 @@ function WhiteDiv(){
             return TaskStatus
         })
     }
+
+
+
+    function Count(){
+        let falseCount = 0;
+        let trueCount = 0;
+
+        task.forEach((ele)=>{
+            if(ele.completed === false){
+                falseCount ++
+            }
+            else{
+                trueCount++
+            }
+        })
+
+        return {falseCount, trueCount}
+    }
+
+    const { falseCount, trueCount } = Count();
 
     return(
       <div id='whiteDiv'>
@@ -71,6 +92,7 @@ function WhiteDiv(){
         ))}
         </div>
         </div>
+        <Total Fnum={falseCount} Tnum={trueCount} />
       </div>
     )
   }

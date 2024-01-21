@@ -23,6 +23,7 @@
         padding: 2rem 1.7rem;
         font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
         box-shadow: rgba(0, 0, 0, 0.13) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        overflow-y: auto;
     }   
 }
 
@@ -63,7 +64,7 @@
     #whiteDiv{
         width: 90%;
         min-height: 90%;
-        top: 75%; 
+        top: 85%; 
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: aliceblue;
@@ -75,7 +76,7 @@
     #whiteDiv{
         width: 90%;
         min-height: 90%;
-        top: 85%; 
+        top: 110%; 
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: aliceblue;
@@ -87,7 +88,7 @@
     #whiteDiv{
         width: 90%;
         min-height: 90%;
-        top: 95%; 
+        top: 120%; 
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: aliceblue;
@@ -169,16 +170,158 @@
 
 #Total{
     position: absolute;
-    background-color: #DB412A;
-    top: 5%;
-    left: 15%;
+    top: 50px;
+    left: -31%;
+    transform: translate(-50%, -50%);
     height: 100px;
     display: flex;
+    gap: 20px;
 }
 
-#Total > span{
-    background-color: rgb(216, 144, 144);
+@media screen and (max-width: 1250px) {
+    #Total{
+        position: absolute;
+        top: 50px;
+        left: -35%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    #Total{
+        position: absolute;
+        top: 50px;
+        left: -35%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+
+    
+}
+
+@media screen and (max-width: 1090px) {
+    #Total{
+        position: absolute;
+        top: 50px;
+        left: -32%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .TotalClass{
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #Total{
+        position: absolute;
+        top: 50px;
+        left: -49%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .TotalClass{
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 715px) {
+    #Total{
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .TotalClass:nth-child(){
+        width: 100px;
+        border: 0px solid rgb(198, 194, 194);
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    }
+}
+
+
+#Total > span:nth-child(1){
+    background-color: #E87254;
     text-align: center;
     padding: 0.5rem .5rem;
     border: 2px solid black;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+}
+
+#Total > span:nth-child(2){
+    background-color:  #E87254;
+    text-align: center;
+    padding: 0.5rem .5rem;
+    border: 2px solid black;
+    border-bottom-left-radius: 30%;
+    border-top-right-radius: 30%;
+}
+
+@media screen and (max-width: 715px) {
+    #Total{
+        position: absolute;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+
+    #Total > span:nth-child(1){
+        text-align: center;
+        padding: 0.5rem .5rem;
+        border: 2px solid black;
+        border-radius: 20%;
+    }
+    
+    #Total > span:nth-child(2){
+        text-align: center;
+        padding: 0.5rem .5rem;
+        border: 2px solid black;
+        border-radius: 20%;
+}
+}
+
+@media screen and (max-width: 450px) {
+    #Total{
+        position: absolute;
+        top: -80px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 100px;
+        display: flex;
+        gap: 20px;
+    }
+
+    #Total > span:nth-child(1){
+        text-align: center;
+        padding: 0.5rem .5rem;
+        border: 2px solid black;
+        border-radius: 20%;
+    }
+    
+    #Total > span:nth-child(2){
+        text-align: center;
+        padding: 0.5rem .5rem;
+        border: 2px solid black;
+        border-radius: 20%;
+}
 }
